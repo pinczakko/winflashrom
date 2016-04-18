@@ -31,23 +31,21 @@ installed on your Windows system:
 
 How to build winflashrom from the source code
 ----------------------------------------------
-* Building the application
+* _Building the application_. 
   To build the application, "cd" to the source code root directory of the source code 
   from within MSys (or other compatible shell that you might use) and invoke "make".
   
-* Building the driver
+* _Building the driver_. 
   To build the driver, run the Windows XP DKK or WDK shell (The WinXP Free Build 
   environment or the WinXP Checked Build environment). Then, "cd" to the directory 
   named "driver" in the root directory of the source code and invoke "build" from 
   there. If you would like to have debugging message, use the "The WinXP checked 
   build environment" of the Windows XP DDK or WDK shell.
 
-* Remote debugging the driver
+* _Remote debugging the driver_. 
   To do a remote debugging, first run the DbgView client in the _test machine_ by invoking 
-  the following command in DbgView installation directory:
-  DbgView.exe /c /t
-  
-  Then, connect to the test machine from the _remote machine_ by running DbgView.exe.
+  the following command in DbgView installation directory: `DbgView.exe /c /t`
+  Then, connect to the test machine from the _remote machine_ by running `DbgView.exe`.
   In the remote DbgView window, activate the Capture|Capture Kernel option, 
   Capture|Pass-Through option, and Capture|Capture Events option and 
   Disable the Capture|Capture Wind32 option as it will clutter the output with 
@@ -58,21 +56,23 @@ How to build winflashrom from the source code
 Usage
 -----
 
-usage: ./flashrom [-rwvEVfh] [-c chipname] [-s exclude_start]
-       [-e exclude_end] [-m vendor:part] [-l file.layout] [-i imagename] [file]
-   -r | --read:                    read flash and save into file
-   -w | --write:                   write file into flash (default when
-                                   file is specified)
-   -v | --verify:                  verify flash against file
-   -E | --erase:                   erase flash device
-   -V | --verbose:                 more verbose output
-   -c | --chip <chipname>:         probe only for specified flash chip
-   -s | --estart <addr>:           exclude start position
-   -e | --eend <addr>:             exclude end postion
-   -m | --mainboard <vendor:part>: override mainboard settings
-   -f | --force:                   force write without checking image
-   -l | --layout <file.layout>:    read rom layout from file
-   -i | --image <name>:            only flash image name from flash layout
+usage: 
+
+    ./flashrom [-rwvEVfh] [-c chipname] [-s exclude_start]
+    [-e exclude_end] [-m vendor:part] [-l file.layout] [-i imagename] [file]
+    -r | --read:                    read flash and save into file
+    -w | --write:                   write file into flash (default when
+                                    file is specified)
+    -v | --verify:                  verify flash against file
+    -E | --erase:                   erase flash device
+    -V | --verbose:                 more verbose output
+    -c | --chip <chipname>:         probe only for specified flash chip
+    -s | --estart <addr>:           exclude start position
+    -e | --eend <addr>:             exclude end postion
+    -m | --mainboard <vendor:part>: override mainboard settings
+    -f | --force:                   force write without checking image
+    -l | --layout <file.layout>:    read rom layout from file
+    -i | --image <name>:            only flash image name from flash layout
 
  If no file is specified, then all that happens
  is that flash info is dumped and the flash chip is set to writable.
@@ -85,7 +85,7 @@ Flashrom reads the LinuxBIOS table to determine the current mainboard.
 (Parse DMI as well in future?) If no LinuxBIOS table could be read
 or if you want to override these values, you can specify -m, e.g.:
 
-  flashrom -w --mainboard ISLAND:ARUMA island_aruma.rom
+    flashrom -w --mainboard ISLAND:ARUMA island_aruma.rom
 
 The following boards require the specification of the board name, if
 no LinuxBIOS table is found:
@@ -103,12 +103,13 @@ ROM Layout Support
 Flashrom supports ROM layouts. This allows to flash certain parts of
 the flash chip only. A ROM layout file looks like follows:
 
-  00000000:00008fff gfxrom
-  00009000:0003ffff normal
-  00040000:0007ffff fallback
-
+    00000000:00008fff gfxrom
+    00009000:0003ffff normal
+    00040000:0007ffff fallback
+  
   i.e.:
-  startaddr:endaddr name
+  
+    startaddr:endaddr name
 
   all addresses are offsets within the file, not absolute addresses!
   
@@ -197,10 +198,8 @@ Winbond W39V040A
 Winbond W39V040B
 Winbond W39V080A
 
-
 Supported Southbridges
 ----------------------
-
 AMD CS5530/CS5530A
 AMD Geode SC1100
 AMD AMD-8111
