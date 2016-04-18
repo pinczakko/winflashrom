@@ -1,0 +1,11 @@
+############################################################################################
+#  
+#  TODO list by Darmawan Salihun 28th June 2007
+#
+#
+
+1. Code review to find logic incompatibilities.
+2. Creating diff/patch from the last modified code with regard to flashrom base code.
+
+
+

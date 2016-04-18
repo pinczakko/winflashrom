@@ -1,0 +1,30 @@
+82802ab.o: 82802ab.c flash.h 82802ab.h debug.h
+am29f040b.o: am29f040b.c flash.h jedec.h udelay.h debug.h
+board_enable.o: board_enable.c libpci/pci.h libpci/header.h flash.h \
+  debug.h direct_io.h
+chipset_enable.o: chipset_enable.c libpci/pci.h libpci/header.h flash.h \
+  debug.h direct_io.h
+direct_io.o: direct_io.c interfaces.h direct_io.h error_msg.h
+error_msg.o: error_msg.c error_msg.h
+flashchips.o: flashchips.c flash.h jedec.h udelay.h m29f400bt.h 82802ab.h \
+  msys_doc.h am29f040b.h sst28sf040.h sst49lfxxxc.h w49f002u.h \
+  w39v040fa.h sst39sf020.h sst49lf040.h pm49fl004.h mx29f002.h \
+  sharplhf00l04.h sst_fwhub.h
+flashrom.o: flashrom.c libpci/pci.h libpci/header.h direct_io.h flash.h \
+  lbtable.h layout.h debug.h
+jedec.o: jedec.c flash.h jedec.h udelay.h debug.h
+layout.o: layout.c layout.h lbtable.h debug.h direct_io.h
+lbtable.o: lbtable.c flash.h linuxbios_tables.h debug.h direct_io.h
+m29f400bt.o: m29f400bt.c flash.h m29f400bt.h debug.h
+msys_doc.o: msys_doc.c flash.h msys_doc.h debug.h
+mx29f002.o: mx29f002.c flash.h jedec.h udelay.h mx29f002.h debug.h
+pm49fl004.o: pm49fl004.c flash.h jedec.h udelay.h pm49fl004.h
+sharplhf00l04.o: sharplhf00l04.c flash.h sharplhf00l04.h debug.h
+sst28sf040.o: sst28sf040.c flash.h jedec.h udelay.h debug.h
+sst39sf020.o: sst39sf020.c flash.h jedec.h udelay.h sst39sf020.h
+sst49lf040.o: sst49lf040.c flash.h jedec.h udelay.h sst49lf040.h
+sst49lfxxxc.o: sst49lfxxxc.c flash.h jedec.h udelay.h debug.h
+sst_fwhub.o: sst_fwhub.c flash.h jedec.h udelay.h sst_fwhub.h
+udelay.o: udelay.c debug.h
+w39v040fa.o: w39v040fa.c flash.h jedec.h udelay.h w39v040fa.h direct_io.h
+w49f002u.o: w49f002u.c flash.h jedec.h udelay.h w49f002u.h

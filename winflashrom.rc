@@ -1,0 +1,6 @@
+/////////////////////////////////////////////////////////////////////////
+//  winflashrom resource file
+//  28 June 2007 Darmawan Salihun
+//
+
+WINFLASHROMDRV	DRIVER	DISCARDABLE	"driver/i386/winflashrom.sys"	

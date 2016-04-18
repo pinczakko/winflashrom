@@ -1,0 +1,83 @@
+.TH FLASHROM 1 "December 20, 2006"
+.SH NAME
+flashrom \- a universal flash programming utility
+.SH SYNOPSIS
+.B flashrom \fR[\fB\-rwvEVfh\fR] [\fB\-c\fR chipname] [\fB\-s\fR exclude_start] [\fB\-e\fR exclude_end]
+         [\fB-m\fR vendor:part] [\fB-l\fR file.layout] [\fB-i\fR image_name] [file]
+.SH DESCRIPTION
+.B flashrom
+is a universal flash programming utility for flash chips
+(e.g. in DIP or PLCC packaging). It can be used to flash BIOS images,
+for example.
+.SH OPTIONS
+If no file is specified, then all that happens
+is that flash info is dumped and the flash chip is set to writable.
+.TP
+.B "\-r, \-\-read"
+Read flash and save contents into file.
+.TP
+.B "\-w, \-\-write"
+Write file into flash (default when file is specified).
+.TP
+.B "\-v, \-\-verify"
+Verify flash against file.
+.TP
+.B "\-E, \-\-erase"
+Erase flash device.
+.TP
+.B "\-V, \-\-verbose"
+More verbose output.
+.TP
+.B "\-c, \-\-chip" <chipname>
+Probe only for specified flash chip.
+.TP
+.B "\-s, \-\-estart" <addr>
+Exclude start position. (obsolete)
+.TP
+.B "\-e, \-\-eend" <addr> 
+Exclude end postion. (obsolete)
+.TP
+.B "\-m, \-\-mainboard" <vendor:part>
+Override mainboard settings.
+.TP
+.B "\-f, \-\-force"
+Force write without checking image.
+.TP
+.B "\-l, \-\-layout" <layout.file>
+Read ROM layout from file.
+.TP
+.B "\-i, \-\-image" <name>
+Only flash image name from flash layout.
+.TP
+.B "\-h, \-\-help"
+Show a help text and exit.
+.\".TP
+.\".B "\-\-version"
+.\"Show version information and exit.
+.SH BUGS
+Please report any bugs at http://tracker.linuxbios.org/trac/LinuxBIOS/.
+.SH LICENCE
+.B flashrom
+is covered by the GNU General Public License (GPL), version 2 or later.
+.SH SEE ALSO
+.BR romcc (1),
+.BR abuild (1).
+.SH COPYRIGHT
+2000 Silicon Integrated System Corporation
+.br
+2003 Niki W. Waibel
+.br
+2004 Tyan Corp
+.br
+2005-2007 coresystems GmbH
+.SH AUTHORS
+Yinghai Lu <yinghai.lu@amd.com>
+.br
+Stefan Reinauer <stepan@coresystems.de>
+.br
+Niki W. Waibel <niki.waibel@gmx.net>
+.br
+some others 
+.PP
+This manual page was written by Uwe Hermann <uwe@hermann-uwe.de>.
+It is licensed under the terms of the GNU GPL (v2 or later).
